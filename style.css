@@ -1,0 +1,302 @@
+html {
+  background: aliceblue;
+  color: coral;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+section {
+  text-align: center;
+  margin: auto;
+  height: 1000px;
+  border-bottom: 1px solid coral;
+}
+
+section h2 {
+  margin: 2em;
+}
+
+img {
+  width: auto;
+  height: 200px;
+}
+
+section#intro img {
+  height: 500px;
+  margin: 10em;
+}
+
+#family-affair img {
+  width: auto;
+  height: 700px;
+}
+
+#html-stacking-order .wrapper {
+  width: 600px;
+  margin: auto;
+  text-align: left;
+}
+
+#html-stacking-order ul li {
+  margin: 1em;
+}
+
+div#who-is-front .wrapper {
+  width: 800px;
+  text-align: center;
+  margin: auto;
+}
+
+div#who-is-front .wrapper .philip {
+  background: url("./image/philip.png");
+}
+
+div#who-is-front .wrapper .charles {
+  background: url("./image/charles.png");
+  margin-right: -150px;
+}
+
+div#who-is-front .wrapper .harry {
+  background: url("./image/harry.png");
+  margin-right: -100px;
+  position: relative;
+  bottom: -100px;
+}
+
+div#who-is-front .wrapper .william {
+  background: url("./image/william.png");
+  margin-right: -100px;
+}
+
+div#who-is-front .wrapper .portrait {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 300px;
+}
+
+div#who-is-front .wrapper .harry,
+div#who-is-front .wrapper .william {
+  height: 150px;
+}
+
+#zindex-intro {
+  font-size: larger;
+}
+
+#zindex-intro > div {
+  width: 400px;
+  margin: auto;
+}
+
+#zindex-intro ul {
+  text-align: left;
+  list-style: none;
+}
+
+#zindex-intro #playground {
+  margin: 2em;
+  height: 400px;
+  position: relative;
+}
+
+#zindex-intro #playground > div {
+  position: absolute;
+  right: 50%;
+  left: 50%;
+}
+
+#zindex-intro #playground .elisabeth {
+  top: 0px;
+  z-index: -3;
+}
+
+#zindex-intro #playground .andrew {
+  top: 100px;
+  z-index: -2;
+}
+
+#zindex-intro #playground .harry {
+  margin-left: -100px;
+  z-index: 4;
+}
+
+#highest-stacking-order #playground {
+  margin: 2em;
+  height: 600px;
+  position: relative;
+  width: 800px;
+  text-align: center;
+}
+
+#highest-stacking-order #playground .elisabeth {
+  background: url("./image/elisabeth.png");
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  z-index: 2;
+}
+
+#highest-stacking-order #playground .charles {
+  background: url("./image/charles.png");
+  position: absolute;
+  top: 0px;
+  left: 300px;
+  z-index: 1;
+}
+
+#highest-stacking-order #playground .william {
+  background: url("./image/william.png");
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  z-index: 10;
+}
+
+#highest-stacking-order #playground .portrait {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 300px;
+  width: 300px;
+}
+
+section.more-than-z-index {
+  text-align: center;
+}
+
+section.more-than-z-index #playground {
+  margin: auto;
+  height: 600px;
+  position: relative;
+  width: 400px;
+  text-align: center;
+}
+
+section.more-than-z-index #playground .elisabeth {
+  background: url("./image/elisabeth.png");
+  opacity: 0.7;
+  margin-left: 50px;
+}
+
+section.more-than-z-index #playground .andrew {
+  background: url("./image/andrew.png");
+  margin-left: 100px;
+  margin-top: -175px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+section.more-than-z-index #playground .charles {
+  background: url("./image/charles.png");
+  margin-left: 120px;
+  margin-top: -100px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+section.more-than-z-index #playground .harry {
+  margin-top: -5px;
+  background: url("./image/harry.png");
+}
+
+section.more-than-z-index #playground .portrait {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 250px;
+  width: 250px;
+}
+
+section#flex-box-demo {
+  margin: auto;
+  text-align: center;
+}
+
+section#flex-box-demo #playground {
+  margin: auto;
+  height: 600px;
+  position: relative;
+  width: 400px;
+  text-align: center;
+}
+
+section#flex-box-demo #playground .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+}
+
+section#flex-box-demo #playground .flex-container > div {
+  width: 150px;
+  height: 150px;
+  color: white;
+}
+
+section#flex-box-demo #playground .flex-container div:first-child {
+  background: red;
+  z-index: 1;
+}
+
+section#flex-box-demo #playground .flex-container div:nth-child(2) {
+  background: purple;
+}
+
+section#flex-box-demo #playground .flex-container div:nth-child(3) {
+  background: pink;
+}
+
+section#flex-box-demo #playground .kate {
+  background: lime;
+  position: relative;
+  bottom: 50px;
+  top: 50px;
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+}
+
+section#recap {
+  font-size: larger;
+}
+
+section#recap > div {
+  width: 400px;
+  margin: auto;
+}
+
+section#recap ul {
+  text-align: left;
+}
+
+section#recap ul li {
+  margin-top: 2em;
+}
+
+section#the-end {
+  font-size: larger;
+}
+
+section#the-end > div {
+  width: 400px;
+  margin: auto;
+}
+
+section#the-end ul {
+  text-align: left;
+}
+
+section#the-end ul li {
+  margin-top: 2em;
+}
+
+section#the-end div {
+  width: 400px;
+  text-align: center;
+  margin: auto;
+}
+
+section#the-end div ul {
+  text-align: left;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stacking Context</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section id="intro">
+      <h2>CSS STACKING CONTEXT</h2>
+      <div>
+        <img src="./image/stacking-order.png" />
+      </div>
+    </section>
+
+    <section id="family-affair">
+      <h2>HTML IS A FAMILY AFFAIR</h2>
+      <div>
+        <img src="./image/english-royal-family-tree.png" />
+      </div>
+    </section>
+
+    <section id="html-stacking-order">
+      <h2>HTML STACKING ORDER - no z-index</h2>
+      <div>
+        <img src="./image/royals.png" />
+        <div class="wrapper">
+          <ul>
+            <li>Children show in front of parents like a family photo.</li>
+            <li>
+              Descendant positioned elements, in order of appearance in the HTML
+            </li>
+            <li>
+              Descendant non-positioned blocks, in order of appearance in the
+              HTML
+            </li>
+            <li>The background and borders of the root element</li>
+          </ul>
+        </div>
+      </div>
+      <div id="who-is-front">
+        <h2>WHO IS AT THE FRONT</h2>
+        <div class="wrapper">
+          <div class="portrait philip">
+            <div class="portrait charles">
+              <div class="portrait harry"></div>
+              <div class="portrait william"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4>Lets see what happens when we apply position to the bros</h4>
+    </section>
+
+    <section id="zindex-intro">
+      <h2>CSS Z-INDEX</h2>
+      <div>
+        <ul>
+          ....
+          <li>Layer -3</li>
+          <li>Layer -2</li>
+          <li>Layer -1</li>
+          <li>Layer 0 (default rendering layer)</li>
+          <li>Layer 1</li>
+          <li>Layer 2</li>
+          <li>Layer 3</li>
+          ...
+        </ul>
+        bottom layer (farthest from the observer) top layer (closest to the
+        observer)
+        <div>
+          <h3>Who is really at the front?</h3>
+          <div id="playground">
+            <div class="elisabeth"><img src="./image/elisabeth.png" /></div>
+            <div class="andrew"><img src="./image/andrew.png" /></div>
+            <div class="harry"><img src="./image/harry.png" /></div>
+          </div>
+        </div>
+      </div>
+      <h4>All have positioning lets see how z-index works as expected</h4>
+    </section>
+
+    <section id="highest-stacking-order">
+      <h2>Which of these has the highest Z-Index?</h2>
+      <div id="playground">
+        <div class="portrait elisabeth"></div>
+        <div class="portrait charles">
+          <div class="portrait william"></div>
+        </div>
+      </div>
+      <h4>
+        Demonstrates stacking context although william has the highest z-index
+        Lizbo is on top!!
+      </h4>
+    </section>
+
+    <section class="more-than-z-index">
+      <h2>Not just z-index ?</h2>
+      <div id="playground">
+        <div class="portrait elisabeth"></div>
+        <div class="portrait harry">
+          <div class="portrait charles"></div>
+        </div>
+        <div class="portrait andrew"></div>
+      </div>
+      <h4>
+        Here we see position, transform and opacity all create different
+        stacking contexts
+      </h4>
+    </section>
+
+    <section id="flex-box-demo">
+      <h2>And we also need to think about flex?</h2>
+      <div id="playground">
+        <div class="kate">Kate</div>
+        <div class="flex-container">
+          <div>George</div>
+          <div>Charlotte</div>
+          <div>Louis</div>
+        </div>
+
+      </div>
+      <h4>
+        Here we see flex box children with a z-index other than auto create a stacking context. George, has a z-index however, Charlotte doesn't
+      </h4>
+      <h4>
+        Lets move Kate to be higher in the HTML and give her a z-index - predictions please !!
+      </h4>
+    </section>
+
+    <section id="recap">
+        <h2>Stacking Context Z-Index - Short List</h2>
+        <div id="playground">
+            <ul>
+                <li>Root element of the document (<html>).</li>
+                <li>A positioned element with a z-index other than zero</li>
+                <li>Element that is a child of a flex (flexbox) container, with z-index value other than auto.</li>
+                <li>Element with a "opacity" value less than 1</li>
+                <li>Element with a property of "transform" other than 'none'</li>
+            </ul>
+        </div>
+    </section>
+    <section id="real-life">
+        <h2>Yieldify - Sticky Campaign</h2>
+        <p><a href="https://convert.yieldify.com/org/100101/site/100173/dashboard/142081/review">Elemis UK - TEST CAMPAIGN</a></p>
+        <p><a href="https://www.elemis.com/peptide4-recovery-eye-cream.html#yidebug=true&yitest=treatment&z-index-test">Elemis Product Page</a></p>
+        <p>Lets look at Elemis UK</p>
+        <p>Its broken what is happening</p>
+        <p>Nav bar has a much higher z-index than our campaign</p>
+        <p>where does our campaign sit?</p>
+        <p>What's the stacking context of the nav bar?</p>
+        <a href="https://chrome.google.com/webstore/detail/z-context/jigamimbjojkdgnlldajknogfgncplbh?hl=en">Extension for finding Z-Index context</a>
+        </div>
+    </section>
+    <section id="the-end">
+        <h2>THE END</h2>
+        <img src="
+        https://media.giphy.com/media/tHO6AF6e1tfm8/giphy.gif" />
+        <div>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">MDN The Stacking Context</a></li>
+                <li><a href="https://philipwalton.com/articles/what-no-one-told-you-about-z-index/">what no one told you about z-index</a></li>
+                <li><a href="https://www.youtube.com/watch?v=uS8l4YRXbaw">You tube video - CSS Z-Index and Stacking Context - by Kevin Powel</a></li>
+                <li><a href="https://chrome.google.com/webstore/detail/z-context/jigamimbjojkdgnlldajknogfgncplbh?hl=en">Extension for finding Z-Index context</a></li>
+            </ul>
+        </div>
+        </div>
+    </section>
+  </body>
+</html>
